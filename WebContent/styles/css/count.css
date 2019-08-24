@@ -1,0 +1,153 @@
+@charset "utf-8";
+/* CSS Document */
+.factoryFilter,.lineFilter,.equipmentFilter{ 
+  display:none
+}
+.spc_table{
+  width:85%;
+  margin:0 auto;
+}
+#main3{
+	float:left;
+}
+#main3_5{
+	float:right;
+}
+.chartContent{
+	width:100%;
+	overflow:auto;
+}
+@media (max-width: 767px) {
+  .spc_table{
+    width:93%;
+    margin:0 auto;
+  } 
+  #main3,#main3_5{
+    float:none;
+  }
+  .countBut{
+    margin-bottom:0;
+  }
+}
+.wrapper{
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+.wrapper-content {
+     padding: 20px;
+ }
+
+
+
+
+/*---------ui animate------------------------- */
+.ibox {
+    /*clear: both;*/
+    margin-bottom: 25px;
+    margin-top: 0;
+    padding: 0;
+}
+
+.ibox.collapsed .ibox-content {
+    display: none;
+}
+
+.ibox.collapsed .fa.fa-chevron-up:before {
+    content: "\f078";
+}
+
+.ibox.collapsed .fa.fa-chevron-down:before {
+    content: "\f077";
+}
+
+.ibox:after, .ibox:before {
+    display: table;
+}
+
+.ibox-title {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #ffffff;
+    /*border-color: #39aef5;*/
+    -webkit-border-image: none;
+    -o-border-image: none;
+    border-image: none;
+    /*border-style: solid solid none;*/
+    /*border-width: 4px 0px 0;*/
+    color: inherit;
+    margin-bottom: 0;
+    padding: 14px 15px 7px;
+    min-height: 48px;
+}
+
+.ibox-content {
+    background-color: #fbfbfb00;
+    color: inherit;
+    padding: 15px 20px 20px 20px;
+    border-color: #fbfbfb00;
+    -webkit-border-image: none;
+    -o-border-image: none;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0px;
+}
+
+
+.ibox-content {
+    /*clear: both;*/
+}
+
+.ibox-heading {
+    background-color: #f3f6fb;
+    border-bottom: none;
+}
+
+.ibox-heading h3 {
+    font-weight: 200;
+    font-size: 24px;
+}
+
+.ibox-title h5 {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 0 7px;
+    padding: 0;
+    text-overflow: ellipsis;
+    float: left;
+}
+
+.ibox-title .label {
+    float: left;
+    margin-left: 4px;
+}
+
+.ibox-tools {
+    display: inline-block;
+    float: right;
+    margin-top: 0;
+    position: relative;
+    padding: 0;
+}
+
+.ibox-tools a {
+    cursor: pointer;
+    margin-left: 5px;
+    color: #c4c4c4;
+}
+
+.ibox-tools a.btn-primary {
+    color: #fff;
+}
+
+.ibox-tools .dropdown-menu>li>a {
+    padding: 4px 10px;
+    font-size: 12px;
+}
+
+.ibox .open>.dropdown-menu {
+    left: auto;
+    right: 0;
+}

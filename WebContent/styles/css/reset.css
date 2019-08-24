@@ -1,0 +1,78 @@
+
+@charset "utf-8";
+/* CSS Document */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing:border-box 
+}
+body { 
+  color: #333; 
+  font-family: "微软雅黑", Arial, Georgia, "Times New Roman", Times, serif; 
+  font-size:14px; 
+  line-height:1.5em
+}
+.clear { 
+  clear: both; 
+}
+.clearfix:after { 
+  clear: both; 
+  content: "."; 
+  display: block; 
+  height: 0; 
+  visibility: hidden; 
+}
+a:link, a:visited { 
+  color: #666666; 
+  text-decoration: none; 
+}
+fieldset, img { 
+  border: none; 
+}
+ul, li { 
+  list-style-type: none; 
+}
+h1, h2, h3, h4, h5, h6 { 
+  font-weight: normal; 
+  font-size: 100%; 
+}
+.fl { 
+  float: left 
+}
+.fr { 
+  float: right 
+}
+#container { 
+  background: #fff 
+}
+.font16 { 
+  font-size: 16px; 
+}
+.textc { 
+  text-align: center; 
+}
+.textl { 
+  text-align: left; 
+}
+.textr { 
+  text-align: right; 
+}
+.mb { 
+  margin-bottom: 30px; 
+}
+.pr { 
+  position: relative; 
+}
+.pa { 
+  position: absolute; 
+}
+input { 
+  outline: none; 
+}
+button { 
+  outline: none; 
+}
+textarea { 
+  outline: none; 
+}/* CSS Document */
+

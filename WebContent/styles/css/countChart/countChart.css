@@ -1,0 +1,485 @@
+@charset "utf-8";
+.de_margin_top {
+  margin-top:3%;
+}
+.de_margin_top_1 {
+  margin-top:1%;
+}
+
+.de_margin_width {
+  width:150px;
+}
+
+.ui{
+    width:auto;
+    /*height:50px;*/
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+.ui li{
+    width: 43px;
+    /* margin: 0 10px; */
+    float: left;
+    border: 1px #eceff3 solid;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
+
+.ui li a{
+    width:43px;
+    height:50px;
+    padding:0 20px;
+    font-size: 12px;
+    line-height:50px;
+    
+    display: inline-block;
+}
+
+.font_style_00b0f0_white {
+  background-color:#00b0f0 !important;
+  color:white !important;
+}
+
+#Ulist li:nth-of-type(odd){ background-color: white;} /*奇数行*/
+#Ulist li:nth-of-type(even){background-color: #dbeef4;}/*偶数行*/
+
+#Ulist2 li:nth-of-type(odd){ background-color: white;} /*奇数行*/
+#Ulist2 li:nth-of-type(even){background-color: #dbeef4;}/*偶数行*/
+
+
+.tab2Ddiv {
+ width: 100%;
+ min-height: 180px;
+ border: 1px solid #ccc;
+ margin-top:30px;
+ border-radius: 8px;
+}
+.tab3Ddiv {
+ width: 100%;
+ min-height: 770px;
+ border: 1px solid #ccc;
+ margin-top:30px;
+ border-radius: 8px;
+}
+.tab2DdivFont {
+    display:block;
+    width:150px;
+    height:30px;
+    position:relative;
+    top:-20px;
+    text-align: center;
+    background: white;
+    color:#7e7e7e;
+    font-size: 24px;
+    left:10px;
+ }
+ .tab3DdivFont {
+    display:block;
+    width:150px;
+    height:30px;
+    position:relative;
+    top:-20px;
+    text-align: center;
+    background: white;
+    color:#7e7e7e;
+    font-size: 24px;
+    left:10px;
+ }
+ .tab2DdivFont:before, .tab2DdivFont:after {
+    content: "";
+    display: inline-block;
+    vertical-align:middle;
+    width: 18%;
+    border: 0.3px solid #ccc;
+}
+.modelnumSelectedArea {
+	padding-top:2%;
+	width:200px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.modelnumSelected {
+    color: #0062b6;
+    font-size: 30px;
+
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.modelnumSelectedHeiLine {
+    color: #989999;
+    font-size: 30px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.product {
+    margin-left: 50px;
+    float: left;
+}
+.productNo {
+    color: #b1b1b1;
+    font-size:22px;
+}
+.productMid {
+    float: left;
+	margin-left: 2%;
+	background-color:#eceff3;
+	width:23%;
+	height: 100px;
+	border-radius: 12px;
+	text-align:center;
+}
+.driverMid {
+    float: left;
+    margin-left: 1.8%;
+    background-color:#eceff3;
+    width:96.5%;
+    height: 60px;
+    border-radius: 12px;
+    /*text-align:center;*/
+    display: table;
+    padding-left: 4.8%;
+
+}
+.productMidTime {
+	padding-top:3.5%;
+	color: #707070;
+}
+.dirverMidTime {
+    color: #707070;
+    display: table-cell;
+    vertical-align: middle;
+    width: 25%;
+}
+.dirverMidDriLineFac {
+    color: #707070;
+    display: table-cell;
+    vertical-align: middle;
+}
+.heightLine {
+    width: 1px;
+    background-color: #d4d4d4;
+    height: 34px;
+}
+.heightLineMargin-top {
+    margin-top: 13px;
+}
+.heightLineMargin-right {
+    margin-right: 10px;
+}
+.driverWegTotal {
+    color: #707070;
+}
+.tableCellMiddel {
+  display: table-cell;
+  vertical-align: middle;
+}
+.productMidTimeConst {
+	color: #989999;
+	font-size:16px;
+}
+.driverWebMidTimeConst {
+    color: #525252;
+    font-size:24px;
+}
+.driverWebMidt {
+    color: #0062b6;
+    font-size: 24px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.driverWebMidTimeEnd {
+    color: #707070;
+    font-size:18px;
+}
+.startTimeForS {
+    letter-spacing:0.09em;
+}
+.productOKNGCountArea{
+    float: left;
+    margin-left:4%;
+}
+.productCountFont {
+	color:#7e7e7e;
+	font-size:24px;
+	display: inline;
+}
+.productCountFont2 {
+    color:#626161;
+    font-size:24px;
+    display: inline;
+}
+.productCountAreaFont {
+    color:#0062b6;
+    font-size:24px;
+    background-color: #eceff3;
+    float:left;
+    width:172px;
+    padding-left:5%;
+    /*
+    display: inline;
+    */
+}
+.productPassArea{
+    float: left;
+    margin-left:1.1%;
+    width:30%;
+    height:100px;
+    margin-left: 5%;
+}
+.productPassAreaFont {
+    color:#7e7e7e;
+    font-size:24px;
+    float:left;
+    /*
+    display: inline;
+    */
+}
+.productCountAreaFontImg {
+    background-image:url(../../img/productPass.png);
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+    float:left;
+    /*
+    display: inline;
+    */
+}
+.productCountAreaFontImgFont {
+    color:#ffffff;
+    font-size:42px;
+}
+/*-----------------图标区域-----------------------------------------*/
+.maindata1 {
+    height:350px;
+    width:720px;
+    /*margin-left:auto;
+    margign-right:auto;
+    margin-top: 1.5%; */
+    /* display:none;
+    float:left;*/
+    /* margin-left:12%; 
+    display: inline-block;*/
+}
+.maindata2 {
+    height:450px;
+    width:720px;
+    /*margin-left:auto;
+    margign-right:auto; */
+    margin-top: 1.5%;
+    /* display:none;
+    float:left;*/
+    /* margin-left:12%; 
+    display: inline-block;*/
+}
+.maindata3 {
+    height:450px;
+    width:720px;
+    /*margin-left:auto;
+    margign-right:auto; */
+    margin-top: 1.5%;
+    /* display:none;
+    float:left;*/
+    /* margin-left:12%; 
+    display: inline-block;*/
+}
+.maindata4 {
+    height:750px;
+    width:850px;
+    margin-top:20px;
+    padding:0px;
+    /*margin-left:auto;
+    margign-right:auto;
+    margin-top: 1.5%; */
+    /* display:none;
+    float:left;*/
+    /* margin-left:12%; 
+    display: inline-block;*/
+}
+.maindata5 {
+    height:550px;
+    width:800px;
+    padding:0px;
+    margin-left:1.2%;
+    /*margin-top:8%;
+    margin-left:auto;
+    margign-right:auto;
+    margin-top: 1.5%; */
+    /* display:none;
+    float:left;*/
+    /* margin-left:12%; 
+    display: inline-block;*/
+}
+.maindata6 {
+    height:250px;
+    width:650px;
+    padding:0px;
+    margin-left:2.8%;
+    /*margin-top:8%;
+    margin-left:auto;
+    margign-right:auto;
+    margin-top: 1.5%; */
+    /* display:none;
+    float:left;*/
+    /* margin-left:12%; 
+    display: inline-block;*/
+}
+.chartLeftArea {
+    border: 1px solid #ccc;
+    float: left;
+    margin-top: 2%;
+}
+.titleMarks1 {
+    margin-top: 2%;
+    margin-right: 2%;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 13px;
+}
+.titleMarks1 img {
+  margin-bottom: 6px;
+  margin-right: 20px;
+}
+.outputArea{ 
+  margin-top: 5%;
+  padding-left: 2%;
+}
+.outputAreaItem {
+  display: inline-block;
+  height: 350px;
+  border: 1px #eeeeee solid;
+}
+.outputAreaSubItem {
+    font-size: 16px;
+    color: white;
+    background-color: #00b0f0;
+    height: 29px;
+    width: 510px;
+    text-align: center;
+}
+.factoryTotalCompareArea {
+  width: 510px;
+  height: 300px;
+  padding-left: 25%;
+}
+.driverEnergyArea {
+  margin-top: 2%;
+  padding-left: 2%;
+  width:50%;
+  float:left;
+}
+.driverEnergyTableArea {
+
+}
+.driverEnergyTableArea .th-inner  {
+  background-color: #00b0f0 !important;
+  color: white !important;
+}
+.W120 .th-inner {
+    width:120px !important;
+}
+.W240 .th-inner {
+    width:242px !important;
+}
+.driverEnergyLineArea {
+  padding-left: 0.5%;
+  width:50%;
+  float:left;
+}
+.driverEnergyLineSubArea {
+  width: 810px;
+  height: 300px;
+}
+.driverAnalysisArea{ 
+  margin-top: 7%;
+  padding-left: 2%;
+}
+.driverAnalysis {
+ width: 100%;
+ min-height: 770px;
+ border: 1px solid #ccc;
+ margin-top:30px;
+ border-radius: 8px;
+}
+.driverAnalysisMid {
+    float: left;
+    margin-left: 1.8%;
+    background-color:#eceff3;
+    width:77.5%;
+    height: 60px;
+    border-radius: 12px;
+    /*text-align:center;*/
+    display: table;
+    padding-left: 4.8%;
+    margin-top: 1%;
+
+}
+.driverAnalysisMidAreaItem {
+  float:left;
+  height: 350px;
+  width: 510px;
+}
+.wegFontBottom {
+  color: #525252;
+  font-size:24px;
+}
+.driverAnalysisRuntime {
+ width: 100%;
+ min-height: 568px;
+ border: 1px solid #ccc;
+ margin-top:30px;
+ border-radius: 8px;
+}
+.driverAnalysisMidAreaItemRuntime {
+  float:left;
+  height: 250px;
+  width: 1580px;
+}
+.driverRuntimeFontArea {
+  background-color: white;
+  line-height: 34px;
+  margin-right: 20px;
+  border-radius: 7px;
+  padding-left: 10px;
+  font-size: 21px;
+  text-align: center;
+}
+.driverRuntimeFontAreaGreen {
+  display: table-cell;
+  background-color: green;
+  line-height: 30px;
+  width: 73px;
+  color: white;
+  margin-left: 10px;
+  text-align: center;
+}
+.driverRuntimeFontAreaYellow {
+  display: table-cell;
+  background-color: #e6b600;
+  line-height: 30px;
+  width: 73px;
+  color: white;
+  margin-left: 10px;
+  text-align: center;
+}
+.driverRuntimeFontAreaRed {
+  display: table-cell;
+  background-color: red;
+  line-height: 30px;
+  width: 73px;
+  color: white;
+  margin-left: 10px;
+  text-align: center;
+}
+.table_cell {
+  display: table-cell;
+}
+.width_defind {
+  width:214px;
+}

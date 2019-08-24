@@ -1,0 +1,87 @@
+@CHARSET "UTF-8";
+.maindiv {
+    /*
+    background-image: url("../styles/img/AnalyseBkImg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
+
+    background-image:url(../../img/AnalyseBkImg.jpg);
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+    background-attachment: fixed;
+    align: center;
+    /* padding-top:5%; 
+    width:135%;*/
+
+}
+.maindata1 {
+    height:450px;
+    width:720px;
+    /*margin-left:auto;
+    margign-right:auto; */
+    margin-top: 0.5%;
+    /* display:none;*/
+    float:left;
+    /* margin-left:12%; */
+    display: inline-block;
+}
+.maindata2 {
+    height:300px;
+    width:480px;
+    /*margin-left:auto;
+    margign-right:auto; */
+    margin-top: 20px;
+    float:right;
+    margin-right:30%;
+    display: inline-block;
+}
+.maindata3 {
+    height:300px;
+    width:480px;
+    /*margin-left:auto;
+    margign-right:auto; */
+    margin-top: 20px;
+    display: inline-block;
+    margin-left:12%;
+}
+.maindata4 {
+    height:300px;
+    width:480px;
+    /*margin-left:auto;
+    margign-right:auto; 
+    margin-top: 2%;*/
+    float:right;
+    /*
+    margin-right:37%;*/
+    display: inline-block;
+    margin-top:5%;
+    /*
+    width:20%;*/
+}
+.maindata5 {
+    height:300px;
+    width:480px;
+    /*margin-left:auto;
+    margign-right:auto; */
+    margin-top: 20px;
+    display: inline-block;
+    margin-left:12%;
+}
+.maindata6 {
+    height:300px;
+    width:480px;
+    /*margin-left:auto;
+    margign-right:auto; */
+    margin-top: 20px;
+    float:right;
+    margin-right:30%;
+    display: inline-block;
+}
+
+/*----------------共同部分------------------------*/
+.witheRow {
+	height：1px;
+	with:1000px;
+	background-color: white;
+}

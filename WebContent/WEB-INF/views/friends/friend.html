@@ -1,0 +1,305 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>好友聊天</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="../../../styles/validationEngine/css/validationEngine.jquery.css" rel="stylesheet" type="text/css" media="screen"/>
+<!--external css-->
+<link href="../../../styles/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../../../styles/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+<link href="../../../styles/assets/bootstrap-table/bootstrap-table.css" rel="stylesheet" type="text/css" />
+<link href="../../../styles/assets/sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
+<!-- Custom styles for this template -->
+<link href="../../../styles/css/style.css" rel="stylesheet" />
+<link href="../../../styles/css/style-responsive.css" rel="stylesheet" />
+<link href="../../../styles/img/favicon.ico" type="image/x-icon" rel="icon" />
+<!-- For the use of the company's management page -->
+<link rel="stylesheet" href="../../../styles/css/companypublic.css"/>
+<!-- For the use of the registedlist page -->
+<link href="../../../styles/uploadify/css/uploadify.css" rel="stylesheet" type="text/css" />
+<!-- datapicker css  -->
+<link href="../../../styles/datetimepicker/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link href="../../../styles/dwz/themes/css/ieHack.css" rel="stylesheet" type="text/css" media="screen"/>
+<![endif]-->
+<!--[if lte IE 9]>
+<script src="../../../styles/dwz/js/speedup.js" type="text/javascript"></script>
+<![endif]-->
+<link href="../../../styles/css/friend.css" rel="stylesheet" />
+<script src="../../../js/jquery.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+  <div id="container">
+      <div class="main-wrap">
+        <div class="main-body">
+          <div class="searchBar" style="padding: 0px 20px 20px 15px; ">
+          <div class="row">
+           <div class="col-sm-3 friend_list">
+             <div class=" myfriend">我的好友</div>
+             <ul class="sidebar-menu">
+                   
+                <li  title="1">
+                  <a class="friend">
+                    <img src="people.png" /><span>陈二</span>
+                     
+                  </a>
+                </li>
+                 <li  title="1">
+                  <a class="friend">
+                    <img src="people.png" /><span>吴九</span>
+                     
+                  </a>
+                </li>
+                 <li  title="1">
+                  <a class="friend">
+                    <img src="people.png" /><span>吴九</span>
+                     
+                  </a>
+                </li>
+                 <li  title="1">
+                  <a class="friend">
+                    <img src="people.png" /><span>吴九</span>
+                     
+                  </a>
+                </li>
+                 <li  title="1">
+                  <a class="friend">
+                    <img src="people.png" /><span>吴九</span>
+                     
+                  </a>
+                </li>
+                 <li  title="1">
+                  <a class="friend">
+                    <img src="people.png" /><span>吴九</span>
+                     
+                  </a>
+                </li>
+                <li  title="1">
+                  <a class="friend">
+                    <img src="people.png" /><span>吴九</span>
+                     
+                  </a>
+                </li>
+                <li  title="1">
+                  <a class="friend">
+                    <img src="people.png" /><span>吴九</span>
+                     
+                  </a>
+                </li>
+                <li  title="1">
+                  <a class="friend">
+                    <img src="people.png" /><span>吴九</span>
+                     
+                  </a>
+                </li>
+   
+            </ul>
+              
+           </div>
+           <div class="col-sm-9 friend_content" style="padding-top: 20px">
+	           <div class="box box-success direct-chat direct-chat-success">
+	            <div class="box-header with-border">
+	              <h3 class="box-title">聊天界面</h3>
+	
+	              <div class="box-tools pull-right">
+	<!--                 <span data-toggle="tooltip" title="3 New Messages" class="badge bg-green">3</span> -->
+	                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+	                </button>
+	<!--                 <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle"> -->
+	<!--                   <i class="fa fa-comments"></i></button> -->
+	                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+	              </div>
+	            </div>
+	            <!-- /.box-header -->
+	            <div class="box-body">
+	              <!-- Conversations are loaded here -->
+	              <div class="direct-chat-messages">
+	                <!-- Message. Default to the left -->
+	                <div class="direct-chat-msg">
+	                  <div class="direct-chat-info clearfix">
+	                    <span class="direct-chat-name pull-left">吴九</span>
+	                    <span class="direct-chat-timestamp pull-right">2016-10-31 10:20</span>
+	                  </div>
+	                  <!-- /.direct-chat-info -->
+	                 
+	                  <div class="direct-chat-text">
+	                                                                 今天的工作做完了吗？
+	                  </div>
+	                  <!-- /.direct-chat-text -->
+	                </div>
+	                <!-- /.direct-chat-msg -->
+	
+	                <!-- Message to the right -->
+	                <div class="direct-chat-msg right">
+	                  <div class="direct-chat-info clearfix">
+	                    <span class="direct-chat-name pull-right">陈二</span>
+	                    <span class="direct-chat-timestamp pull-left">2016-10-31 10:30</span>
+	                  </div>
+	                  <!-- /.direct-chat-info -->
+	                
+	                  <div class="direct-chat-text">
+	                                                                做完了
+	                  </div>
+	                  <!-- /.direct-chat-text -->
+	                </div>
+	                 <div class="direct-chat-msg right">
+	                  <div class="direct-chat-info clearfix">
+	                    <span class="direct-chat-name pull-right">陈二</span>
+	                    <span class="direct-chat-timestamp pull-left">2016-10-31 10:30</span>
+	                  </div>
+	                  <!-- /.direct-chat-info -->
+	                
+	                  <div class="direct-chat-text">
+	                                                                做完了
+	                  </div>
+	                  <!-- /.direct-chat-text -->
+	                </div>
+	                 <div class="direct-chat-msg right">
+	                  <div class="direct-chat-info clearfix">
+	                    <span class="direct-chat-name pull-right">陈二</span>
+	                    <span class="direct-chat-timestamp pull-left">2016-10-31 10:30</span>
+	                  </div>
+	                  <!-- /.direct-chat-info -->
+	                
+	                  <div class="direct-chat-text">
+	                                                                做完了
+	                  </div>
+	                  <!-- /.direct-chat-text -->
+	                </div>
+	                 <div class="direct-chat-msg right">
+	                  <div class="direct-chat-info clearfix">
+	                    <span class="direct-chat-name pull-right">陈二</span>
+	                    <span class="direct-chat-timestamp pull-left">2016-10-31 10:30</span>
+	                  </div>
+	                  <!-- /.direct-chat-info -->
+	                
+	                  <div class="direct-chat-text">
+	                                                                做完了
+	                  </div>
+	                  <!-- /.direct-chat-text -->
+	                </div>
+	                <!-- /.direct-chat-msg -->
+	              </div>
+	              <!--/.direct-chat-messages-->
+	
+	              <!-- Contacts are loaded here -->
+<!-- 	              <div class="direct-chat-contacts"> -->
+<!-- 	                <ul class="contacts-list"> -->
+<!-- 	                  <li> -->
+<!-- 	                    <a href="#"> -->
+<!-- 	                      <img class="contacts-list-img" src="../dist/img/user1-128x128.jpg" alt="User Image"> -->
+	
+<!-- 	                      <div class="contacts-list-info"> -->
+<!-- 	                            <span class="contacts-list-name"> -->
+<!-- 	                              Count Dracula -->
+<!-- 	                              <small class="contacts-list-date pull-right">2/28/2015</small> -->
+<!-- 	                            </span> -->
+<!-- 	                        <span class="contacts-list-msg">How have you been? I was...</span> -->
+<!-- 	                      </div> -->
+<!-- 	                      /.contacts-list-info -->
+<!-- 	                    </a> -->
+<!-- 	                  </li> -->
+<!-- 	                  End Contact Item -->
+<!-- 	                </ul> -->
+<!-- 	                /.contatcts-list -->
+<!-- 	              </div> -->
+	              <!-- /.direct-chat-pane -->
+	            </div>
+	            <!-- /.box-body -->
+	            <div class="box-footer">
+	              <form action="#" method="post">
+	                <div class="input-group">
+	                  <input type="text" name="message" placeholder="在此处输入信息" class="form-control">
+	                      <span class="input-group-btn">
+	                        <button type="submit" class="btn btn-info btn-flat">发送</button>
+	                      </span>
+	                </div>
+	              </form>
+	            </div>
+	            <!-- /.box-footer-->
+	          </div>
+          </div>
+         </div>
+          <!--/.direct-chat -->
+        </div>
+    
+          </div>
+        </div>
+      </div>
+   </div>
+   <script type="text/javascript" >
+   $(document).ready(function($){
+	   $(".friend_list > ul").height(450);
+   });
+   </script>
+ <script src="../../../styles/validationEngine/js/languages/jquery.validationEngine-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../styles/validationEngine/js/jquery.validationEngine-2.6.4.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../styles/uploadify/scripts/jquery.uploadify.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../styles/datetimepicker/js/bootstrap-datetimepicker.js"></script>
+  <script src="../../../styles/datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+  <script src="../../../styles/dwz/js/dwz.core.js" type="text/javascript"></script>
+  <script src="../../../styles/dwz/js/dwz.ajax.js" type="text/javascript"></script>
+  <script src="../../../styles/dwz/js/dwz.database.js" type="text/javascript"></script>
+  <script src="../../../js/bootstrap.js"></script>
+  <script src="../../../styles/assets/bootstrap-table/bootstrap-table.js"></script>
+  <script src="../../../styles/assets/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+  <script src="../../../styles/assets/sweetalert/sweetalert-dev.js"></script>
+  <script src="../../../js/jquery.nicescroll.js"></script>
+  <script src="../../../js/uikit.cbr.js"></script>
+  <script src="../../../js/uikit.dialog.js"></script>
+  <script src="../../../js/uikit.table.js"></script>
+  <script src="../../../js/common.js"></script>
+          <script type="text/javascript">
+
+  $("#childType").change(function(e){
+	  //alert($("#analysisMethod").val());
+	 if($("#childType").val()=="datasource"){
+		window.open('dataSource.html');
+		//$(".count_cg").css("display","none"); 
+		//$(".count_grr").css("display","block");  
+		 } 
+
+	  });
+	   $('.form_datetime1').datetimepicker({
+    language:  'zh-CN',
+	   format: 'yyyy-mm-dd hh:ii:ss',
+     weekStart: 1,
+     todayBtn:'linked',
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+     showMeridian: 1,
+		//minView: 2
+		
+ });
+ 
+   $('.form_datetime2').datetimepicker({
+    language:  'zh-CN',
+	   format: 'yyyy-mm-dd hh:ii:ss',
+     weekStart: 1,
+     todayBtn:'linked',
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+     showMeridian: 1,
+		//minView: 2
+		
+ });
+
+
+</script>
+  <script> 
+  $(document).ready(function($){
+    $('#sidebar > ul > li[title="${ParentTitle}"] > a').click();
+    $('#sidebar .sub > li[title="${ModuleTitle}"]').addClass('active');
+  });
+  </script>
+</body>
+</html>

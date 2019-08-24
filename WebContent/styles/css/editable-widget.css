@@ -1,0 +1,129 @@
+.widget-contanier {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.widget-section {
+
+}
+.widget-group {
+    /* font-size: 0; */
+    margin-bottom: 10px;
+}
+.widget-group > .widget-label {
+    vertical-align: middle;
+}
+.widget-label {
+    width: 65px;
+/*     padding-right: 10px; */
+    font-size: 12px;
+    font-weight: normal;
+    color: #154a75;
+}
+
+.widget-group > .widget-unit {
+
+}
+.widget-unit {
+    display: inline-block;
+}
+.widget-unit + .widget-unit {
+    margin-left: 10px;
+}
+.widget-unit > label {
+    margin-right: 3px;
+    font-weight: normal;
+    font-size: 12px;
+    vertical-align: middle;
+    margin-bottom: 0;
+    width: 19px;
+    color: #154a75;
+    
+}
+.widget-unit > .widget-control {
+    width: 40px;
+}
+.widget-control {
+    display: inline-block;
+    width: 160px;
+    height: 28px;
+    padding: 4px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #b5b5b5;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    vertical-align: middle;
+}
+
+.widget-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+}
+#canvas_color,[id$="_background"],[id$="_color"]{
+  width:125px;
+}
+
+.widget-control::-moz-placeholder {
+    color: #999;
+    opacity: 1
+}
+
+.widget-control:-ms-input-placeholder {
+    color: #999
+}
+
+.widget-control::-webkit-input-placeholder {
+    color: #999
+}
+
+.widget-control[disabled],
+.widget-control[readonly],
+fieldset[disabled] .widget-control {
+    background-color: #eee;
+    opacity: 1
+}
+
+.widget-control[disabled],
+fieldset[disabled] .widget-control {
+    cursor: not-allowed
+}
+
+textarea.widget-control {
+    height: auto
+}
+
+/** color picker */
+.widget-group .colorpicker-component {
+    display: inline-block;
+    vertical-align: middle;
+}
+.widget-group .input-group-addon {
+    width: auto;
+    display: inline-block;
+    padding: 5px 8px;
+    height: 28px;
+    border-color: #c0c0c0;
+    border-radius: 0;
+    vertical-align: middle;
+}
+
+/** for Input spinner*/
+.ui-spinner {
+    border-radius: 0; 
+}
+.ui-spinner input {
+    width: 127px;
+}
+#undefined_background,#undefined_color,#undefined_bordercolor,#canvas_background{
+ width:125px;
+}
+.widget-datasource label{
+  width: 50%;
+}
+
+/* input spinner end*/

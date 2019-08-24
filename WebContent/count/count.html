@@ -1,0 +1,377 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Count</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="../../../js/jquery.js" type="text/javascript"></script>
+<link href="../../../styles/validationEngine/css/validationEngine.jquery.css" rel="stylesheet" type="text/css" media="screen"/>
+<!--external css-->
+<link href="../../../styles/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../../../styles/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+<link href="../../../styles/assets/bootstrap-table/bootstrap-table.css" rel="stylesheet" type="text/css" />
+<link href="../../../styles/assets/sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
+<!-- Custom styles for this template -->
+<link href="../../../styles/css/style.css" rel="stylesheet" />
+<link href="../../../styles/css/style-responsive.css" rel="stylesheet" />
+<link href="../../../styles/img/favicon.ico" type="image/x-icon" rel="icon" />
+<!-- For the use of the company's management page -->
+<link rel="stylesheet" href="../../../styles/css/companypublic.css"/>
+<!-- For the use of the registedlist page -->
+<link href="../../../styles/uploadify/css/uploadify.css" rel="stylesheet" type="text/css" />
+<!-- datapicker css  -->
+<link href="../../../styles/datetimepicker/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link href="../../../styles/dwz/themes/css/ieHack.css" rel="stylesheet" type="text/css" media="screen"/>
+<![endif]-->
+<!--[if lte IE 9]>
+<script src="../../../styles/dwz/js/speedup.js" type="text/javascript"></script>
+<![endif]-->
+<link href="../../../styles/css/count.css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <div id="container">
+      <div class="main-wrap">
+        <div class="main-body">
+          <div  style="padding: 20px 10px; border:1px solid #ddd" id="countContent">
+           <!-- <form method="post" action="company/create" id="formID" class="form form-horizontal" enctype="multipart/form-data" onsubmit="return iframeCallback(this, subPageCallback);">
+              <div class="pageFormContent" layoutH="58" >
+                
+               
+                  <div class="form-group "  >
+                    <label for="inputText" class="control-label col-sm-4">统计范围</label>
+                    <div class="col-sm-6">
+                      <select id="statisticalRange" name="statisticalRange" class="form-control validate[required]">
+                      <option>请选择</option>             
+                        <option value="company" selected>公司</option>   
+                        <option value="factory">工厂</option>  
+                        <option value="line">产线</option> 	
+                        <option value="equipment">设备</option>						
+                      </select>
+                    </div>
+                   </div>
+                
+                
+                  <div class="form-group ">
+                    <label for="inputText" class="control-label col-sm-4">筛选</label>
+                    <div class="col-sm-6">
+                      <div class="add_attribute" style="background: none; border: 1px solid #e8e6e6;padding:15px">     
+						<div class="companyFilter">
+						  <h4 class="media-heading" style=" font-size: 13px; font-weight: bold;">已筛选公司</h4>
+								<hr class="hr-normal" />
+								  <div class="form-group">
+									<div class="col-lg-12">
+									  <div id="companyList" class="checkbox toNewParameter" >
+									
+				
+									  </div>
+									</div>
+								  </div>
+						  <h4 class="media-heading" style=" font-size: 13px; font-weight: bold;">动态新增</h4>
+						  <hr class="hr-normal" />
+						  <div class="companyAdd">
+							  <div class="form-group">
+								<label class="control-label col-sm-4" style="font-weight: normal;">公司：</label>
+								<div class="col-sm-6">
+								  <select id="companySelect" class="form-control companySelect">
+									<option value="0">请选择公司</option>
+									<option value="100">公司A</option>
+									<option value="110">公司B</option>
+								 </select>
+								</div>
+							  </div>
+						    <div class="form-group">
+							  <div class="control-label  col-sm-8">
+							   <button type="button" id="updateNewCompany" class="btn btn-primary" style="width:100px;">新增公司</button>
+							  </div>
+						   </div>
+					    </div>
+						  
+						 </div>
+						 <div class="factoryFilter">
+						  <h4 class="media-heading" style=" font-size: 13px; font-weight: bold;">已筛选工厂</h4>
+								<hr class="hr-normal" />
+								  <div class="form-group">
+									<div class="col-lg-12">
+									  <div id="factoryList" class="checkbox toNewParameter" >
+									    
+									  </div>
+									</div>
+								  </div>
+						  <h4 class="media-heading" style=" font-size: 13px; font-weight: bold;">动态新增</h4>
+						  <hr class="hr-normal" />
+						  <div class="factoryAdd">
+							  <div class="form-group">
+								<label class="control-label col-sm-4" style="font-weight: normal;">公司：</label>
+								<div class="col-sm-6">
+								  <select id="factoryCompanySelect" class="form-control companySelect">
+									<option value="0">请选择公司</option>
+									<option value="100">公司A</option>
+									<option value="110">公司B</option>
+								 </select>
+								</div>
+							  </div>
+							  <div class="form-group">
+								<label class="control-label col-sm-4" style="font-weight: normal;">工厂：</label>
+								<div class="col-sm-6">
+								  <select id="factorySelect" class="form-control companySelect">
+									<option value="0">请选择工厂</option>
+									<option value="80">工厂A</option>
+									<option value="81">工厂B</option>
+								 </select>
+								</div>
+							  </div>
+						   <div class="form-group">
+							  <div class="control-label  col-sm-8">
+							   <button type="button" id="updateNewFactory" class="btn btn-primary" style="width:100px;">新增工厂</button>
+							  </div>
+						   </div>
+						  </div>
+						 </div>
+						  <div class="lineFilter">
+						  <h4 class="media-heading" style=" font-size: 13px; font-weight: bold;">已筛选产线</h4>
+								<hr class="hr-normal" />
+								  <div class="form-group">
+									<div class="col-lg-12">
+									  <div id="lineList" class="checkbox toNewParameter" >
+	
+									  </div>
+									</div>
+								  </div>
+						  <h4 class="media-heading" style=" font-size: 13px; font-weight: bold;">动态新增</h4>
+						  <hr class="hr-normal" />
+						  <div class="lineAdd">
+							  <div class="form-group">
+								<label class="control-label col-sm-4" style="font-weight: normal;">公司：</label>
+								<div class="col-sm-6">
+								  <select id="lineCompanySelect" class="form-control companySelect">
+									<option value="0">请选择公司</option>
+									<option value="Y">公司A</option>
+									<option value="N">公司B</option>
+								 </select>
+								</div>
+							  </div>
+							  <div class="form-group">
+								<label class="control-label col-sm-4" style="font-weight: normal;">工厂：</label>
+								<div class="col-sm-6">
+								  <select id="lineFactorySelect" class="form-control companySelect">
+									<option value="0">请选择工厂</option>
+									<option value="Y">工厂A</option>
+									<option value="N">工厂B</option>
+								 </select>
+								</div>
+							  </div>
+							  <div class="form-group">
+								<label class="control-label col-sm-4" style="font-weight: normal;">产线：</label>
+								<div class="col-sm-6">
+								  <select id="lineSelect" class="form-control companySelect">
+									<option value="0">请选择产线</option>
+									<option value="Y">产线A</option>
+									<option value="N">产线B</option>
+								 </select>
+								</div>
+							  </div>
+							<div class="form-group">
+							  <div class="control-label  col-sm-8">
+							   <button type="button" id="updateNewLine" class="btn btn-primary" style="width:100px;">新增产线</button>
+							  </div>
+						   </div>
+						  </div>
+						 </div>
+						 	  <div class="equipmentFilter">
+						  <h4 class="media-heading" style=" font-size: 13px; font-weight: bold;">已筛选设备</h4>
+								<hr class="hr-normal" />
+								  <div class="form-group">
+									<div class="col-lg-12">
+									  <div id="equipmentList" class="checkbox toNewParameter" >
+		
+									  </div>
+									</div>
+								  </div>
+						  <h4 class="media-heading" style=" font-size: 13px; font-weight: bold;">动态新增</h4>
+						  <hr class="hr-normal" />
+						  <div class="equipmentAdd">
+							  <div class="form-group">
+								<label class="control-label col-sm-4" style="font-weight: normal;">公司：</label>
+								<div class="col-sm-6">
+								  <select id="equipmentCompanySelect" class="form-control companySelect">
+									<option value="0">请选择公司</option>
+									<option value="Y">公司A</option>
+									<option value="N">公司B</option>
+								 </select>
+								</div>
+							  </div>
+							  <div class="form-group">
+								<label class="control-label col-sm-4" style="font-weight: normal;">工厂：</label>
+								<div class="col-sm-6">
+								  <select id="equipmentFactorySelect" class="form-control companySelect">
+									<option value="0">请选择工厂</option>
+									<option value="Y">工厂A</option>
+									<option value="N">工厂B</option>
+								 </select>
+								</div>
+							  </div>
+							  <div class="form-group">
+								<label class="control-label col-sm-4" style="font-weight: normal;">产线：</label>
+								<div class="col-sm-6">
+								  <select id="equipmentLineSelect" class="form-control companySelect">
+									<option value="0">请选择产线</option>
+									<option value="Y">产线A</option>
+									<option value="N">产线B</option>
+								 </select>
+								</div>
+							  </div>
+							  <div class="form-group">
+								<label class="control-label col-sm-4" style="font-weight: normal;">设备：</label>
+								<div class="col-sm-6">
+								  <select id="equipmentSelect" class="form-control companySelect">
+									<option value="0">请选择设备</option>
+									<option value="Y">设备A</option>
+									<option value="N">设备B</option>
+								 </select>
+								</div>
+							  </div>
+						  <div class="form-group">
+							  <div class="control-label  col-sm-8">
+							   <button type="button" id="updateNewEquipment" class="btn btn-primary" style="width:100px;">新增设备</button>
+							  </div>
+						   </div>
+						  </div>
+						 </div>
+						
+						  
+							   </div>
+        
+                    </div>
+                  </div>
+              
+                  <div class="form-group "  >
+                    <label for="inputText" class="control-label col-sm-4">统计类型</label>
+                    <div class="col-sm-6">
+                      <select id="statisticalRange" name="statisticalRange" class="form-control validate[required]">
+                      <option>请选择</option>             
+                        <option value="company" selected>合格</option>   
+                        <option value="factory">产能</option>  
+                        <option value="line">能耗</option> 	
+                        					
+                      </select>
+                    </div>
+                   </div>
+                
+                <div class="clearfix"></div>
+                <div class="modal-footer" style="border-top: 0; text-align: center;  ">
+                  <button type="submit" class="btn btn-primary" style="width: 200px;" >开始统计</button>
+                </div>
+                
+              </div>
+              
+            </form>-->
+            
+        
+          </div>
+        </div>
+      </div>
+   </div>
+ <script src="../../../styles/validationEngine/js/languages/jquery.validationEngine-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../styles/validationEngine/js/jquery.validationEngine-2.6.4.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../styles/uploadify/scripts/jquery.uploadify.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../styles/datetimepicker/js/bootstrap-datetimepicker.js"></script>
+  <script src="../../../styles/datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+  <script src="../../../styles/dwz/js/dwz.core.js" type="text/javascript"></script>
+  <script src="../../../styles/dwz/js/dwz.ajax.js" type="text/javascript"></script>
+  <script src="../../../styles/dwz/js/dwz.database.js" type="text/javascript"></script>
+  <script src="../../../js/bootstrap.js"></script>
+  <script src="../../../styles/assets/bootstrap-table/bootstrap-table.js"></script>
+  <script src="../../../styles/assets/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+  <script src="../../../styles/assets/sweetalert/sweetalert-dev.js"></script>
+  <script src="../../../js/jquery.nicescroll.js"></script>
+  <script src="../../../js/uikit.cbr.js"></script>
+  <script src="../../../js/uikit.dialog.js"></script>
+  <script src="../../../js/uikit.table.js"></script>
+  <script src="../../../js/common.js"></script>
+ 
+ <script> 
+  $(document).ready(function($){
+    $('#sidebar > ul > li[title="${ParentTitle}"] > a').click();
+    $('#sidebar .sub > li[title="${ModuleTitle}"]').addClass('active');
+	$("#countContent").bind('change','#statisticalRange',function(){
+   //.change(function(e){
+	  //alert($("#statisticalRange").val());
+    if($("#statisticalRange").val()=="company"){
+		$(".factoryFilter").css("display","none"); 
+		$(".lineFilter").css("display","none"); 
+		$(".equipmentFilter").css("display","none"); 
+		$(".companyFilter").css("display","block");   
+	 }
+	 else if($("#statisticalRange").val()=="factory"){
+		$(".factoryFilter").css("display","block"); 
+		$(".lineFilter").css("display","none"); 
+		$(".equipmentFilter").css("display","none"); 
+		$(".companyFilter").css("display","none");   
+	 }
+	  else if($("#statisticalRange").val()=="line"){
+		$(".factoryFilter").css("display","none"); 
+		$(".lineFilter").css("display","block"); 
+		$(".equipmentFilter").css("display","none"); 
+		$(".companyFilter").css("display","none");    
+	 }
+	 else if($("#statisticalRange").val()=="equipment"){
+		$(".factoryFilter").css("display","none"); 
+		$(".lineFilter").css("display","none"); 
+		$(".equipmentFilter").css("display","block"); 
+		$(".companyFilter").css("display","none");    
+	 }
+	 else{
+		$(".factoryFilter").css("display","none"); 
+		$(".lineFilter").css("display","none"); 
+		$(".equipmentFilter").css("display","none"); 
+		$(".companyFilter").css("display","none");  
+		 }
+	 
+	  });
+	   var indexCompany = 0;
+	   var indexFactory = 0;
+	   var indexLine = 0;
+	   var indexEquipment = 0;
+	   
+	$("#countContent").delegate('#updateNewCompany','click',function(){ 
+    	  
+	  if(companySelect.value!=0){
+	    $("#companyList").append("<label class='check_label'><input class='cbr' type='checkbox'  checked='true' name='mesCompany["+indexCompany+"]' value='"+$("#companySelect").val()+"'>"+$("#companySelect").find("option:checked").html()+"");
+		 indexCompany = indexCompany+1;
+		 }
+		
+	 });
+	$("#countContent").delegate('#updateNewFactory','click',function(){ 
+	   if(factorySelect.value!=0){
+	    $("#factoryList").append("<label class='check_label'><input class='cbr' type='checkbox'  checked='true' name='mesFactory["+indexFactory+"]' value='"+$("#factorySelect").val()+"'>"+$("#factorySelect").find("option:checked").html()+"");
+		 indexFactory = indexFactory+1;
+		 }
+	 });
+	$("#countContent").delegate('#updateNewLine','click',function(){ 
+	   if(lineSelect.value!=0){
+	    $("#lineList").append("<label class='check_label'><input class='cbr' type='checkbox'  checked='true' name='mesLine["+indexLine+"]' value='"+$("#lineSelect").val()+"'>"+$("#lineSelect").find("option:checked").html()+"");
+		 indexLine = indexLine+1;
+		 }
+	 });
+	$("#countContent").delegate('#updateNewEquipment','click',function(){ 
+	    if(equipmentSelect.value!=0){	
+	    $("#equipmentList").append("<label class='check_label'><input class='cbr' type='checkbox'  checked='true' name='mesEquipment["+indexEquipment+"]' value='"+$("#equipmentSelect").val()+"'>"+$("#equipmentSelect").find("option:selected").html()+"");
+		 indexEquipment = indexEquipment+1;
+		 }
+	 });
+    $("#countContent").append("<form method='post' action='company/create' id='formID' class='form form-horizontal' enctype='multipart/form-data' onsubmit='return iframeCallback(this, subPageCallback);'><div class='pageFormContent' layoutH='58' ><div class='form-group ' ><label for='inputText'class='control-label col-sm-4'>统计范围</label><div class='col-sm-6'><select id='statisticalRange'name='statisticalRange'class='form-control validate[required]' ><option>请选择</option><option value='company'selected>公司</option><option value='factory'>工厂</option><option value='line'>产线</option><option value='equipment'>设备</option></select></div></div><div class='form-group '><label for='inputText'class='control-label col-sm-4'>筛选</label><div class='col-sm-6'><div class='add_attribute' style='background: none; border: 1px solid #e8e6e6;padding:15px'><div class='companyFilter'><h4 class='media-heading' style='font-size: 13px; font-weight: bold;'>已筛选公司</h4><hr class='hr-normal'/><div class='form-group'><div class='col-lg-12'><div id='companyList' class='checkbox toNewParameter'></div></div></div><h4 class='media-heading' style='font-size: 13px; font-weight: bold;'>动态新增</h4><hr class='hr-normal'/><div class='companyAdd'><div class='form-group'><label class='control-label col-sm-4' style='font-weight: normal;'>公司：</label><div class='col-sm-6'><select id='companySelect'class='form-control companySelect'><option value='0'>请选择公司</option><option value='100'>公司A</option><option value='110'>公司B</option></select></div></div><div class='form-group'><div class='control-label col-sm-8'><button type='button'id='updateNewCompany'class='btn btn-primary'style='width:100px;'>新增公司</button></div></div></div></div><div class='factoryFilter'><h4 class='media-heading' style='font-size: 13px; font-weight: bold;'>已筛选工厂</h4><hr class='hr-normal'/><div class='form-group'><div class='col-lg-12'><div id='factoryList' class='checkbox toNewParameter'></div></div></div><h4 class='media-heading' style='font-size: 13px; font-weight: bold;'>动态新增</h4><hr class='hr-normal'/><div class='factoryAdd'><div class='form-group'><label class='control-label col-sm-4'style='font-weight: normal;'>公司：</label><div class='col-sm-6'><select id='factoryCompanySelect' class='form-control companySelect'><option value='0'>请选择公司</option><option value='100'>公司A</option><option value='110'>公司B</option></select></div></div><div class='form-group'><label class='control-label col-sm-4' style='font-weight: normal;'>工厂：</label><div class='col-sm-6'><select id='factorySelect' class='form-control companySelect'><option value='0'>请选择工厂</option><option value='80'>工厂A</option><option value='81'>工厂B</option></select></div></div><div class='form-group'><div class='control-label col-sm-8'><button type='button' id='updateNewFactory' class='btn btn-primary' style='width:100px;'>新增工厂</button></div></div></div></div><div class='lineFilter'><h4 class='media-heading' style='font-size: 13px; font-weight: bold;'>已筛选产线</h4><hr class='hr-normal'/><div class='form-group'><div class='col-lg-12'><div id='lineList' class='checkbox toNewParameter'></div></div></div><h4 class='media-heading' style='font-size: 13px; font-weight: bold;'>动态新增</h4><hr class='hr-normal'/><div class='lineAdd'><div class='form-group'><label class='control-label col-sm-4' style='font-weight: normal;'>公司：</label><div class='col-sm-6'><select id='lineCompanySelect' class='form-control companySelect'><option value='0'>请选择公司</option><option value='Y'>公司A</option><option value='N'>公司B</option></select></div></div><div class='form-group'><label class='control-label col-sm-4'style='font-weight: normal;'>工厂：</label><div class='col-sm-6'><select id='lineFactorySelect' class='form-control companySelect'><option value='0'>请选择工厂</option><option value='Y'>工厂A</option><option value='N'>工厂B</option></select></div></div><div class='form-group'><label class='control-label col-sm-4'style='font-weight: normal;'>产线：</label><div class='col-sm-6'><select id='lineSelect' class='form-control companySelect'><option value='0'>请选择产线</option><option value='Y'>产线A</option><option value='N'>产线B</option></select></div></div><div class='form-group'><div class='control-label col-sm-8'><button type='button' id='updateNewLine' class='btn btn-primary' style='width:100px;'>新增产线</button></div></div></div></div><div class='equipmentFilter'><h4 class='media-heading' style='font-size: 13px; font-weight: bold;'>已筛选设备</h4><hr class='hr-normal'/><div class='form-group'><div class='col-lg-12'><div id='equipmentList' class='checkbox toNewParameter'></div></div></div><h4 class='media-heading' style='font-size: 13px; font-weight: bold;'>动态新增</h4><hr class='hr-normal'/><div class='equipmentAdd'><div class='form-group'><label class='control-label col-sm-4' style='font-weight: normal;'>公司：</label><div class='col-sm-6'><select id='equipmentCompanySelect' class='form-control companySelect'><option value='0'>请选择公司</option><option value='Y'>公司A</option><option value='N'>公司B</option></select></div></div><div class='form-group'><label class='control-label col-sm-4' style='font-weight: normal;'>工厂：</label><div class='col-sm-6'><select id='equipmentFactorySelect' class='form-control companySelect'><option value='0'>请选择工厂</option><option value='Y'>工厂A</option><option value='N'>工厂B</option></select></div></div><div class='form-group'><label class='control-label col-sm-4' style='font-weight: normal;'>产线：</label><div class='col-sm-6'><select id='equipmentLineSelect' class='form-control companySelect'><option value='0'>请选择产线</option><option value='Y'>产线A</option><option value='N'>产线B</option></select></div></div><div class='form-group'><label class='control-label col-sm-4' style='font-weight: normal;'>设备：</label><div class='col-sm-6'><select id='equipmentSelect' class='form-control companySelect'><option value='0'>请选择设备</option><option value='Y'>设备A</option><option value='N'>设备B</option></select></div></div><div class='form-group'><div class='control-label col-sm-8'><button type='button' id='updateNewEquipment' class='btn btn-primary'style='width:100px;'>新增设备</button></div></div></div></div></div></div></div><div class='form-group ' ><label for='inputText'class='control-label col-sm-4'>统计类型</label><div class='col-sm-6'><select id='statisticalRange' name='statisticalRange' class='form-control validate[required]'><option>请选择</option><option value='company' selected>合格</option><option value='factory'>产能</option><option value='line'>能耗</option></select></div></div><div class='clearfix'></div><div class='modal-footer'style='border-top: 0; text-align: center;'><button type='submit'class='btn btn-primary' style='width: 200px;'>开始统计</button></div></div></form>");  
+	});
+
+  </script> 
+  
+<script >
+   
+	  
+
+</script>
+</body>
+</html>

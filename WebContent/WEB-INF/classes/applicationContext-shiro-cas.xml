@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"
+	default-lazy-init="true">
+
+	<description>Shiro安全配置</description>
+
+	<!-- Shiro's main business-tier object for web-enabled applications -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="cacheManager" ref="shiroEhcacheManager" />
+		<property name="realm" ref="shiroCasRealm" />
+		 <property name="sessionManager" ref="sessionManager"/>  
+		<property name="subjectFactory" ref="casSubjectFactory" />
+	</bean>
+	<bean id="casSubjectFactory" class="org.apache.shiro.cas.CasSubjectFactory" />
+ 	
+ 	
+	<!-- 与Cas集成的CasRealm -->
+	<bean id="shiroCasRealm" class="com.its.common.shiro.ShiroCasRealm"
+		depends-on="userDAO, userRoleDAO, roleDAO, mesCompanyRoleDao,
+			mesCompanyRolePermissionDao, usercompanysDao ,userCompanyroleDao">
+		<property name="userService" ref="userServiceImpl"/>
+		<property name="userRoleService" ref="userRoleServiceImpl"/>
+		<property name="roleService" ref="roleServiceImpl"/>
+		
+		<property name="companyRoleServ" ref="mesCompanyRoleServiceImpl"/>
+		<property name="companyPermissionServ" ref="mesCompanyRolePermissionServiceImp"/>
+		<property name="userCompanyroleServ" ref="userCompanyroleServiceImpl"/>
+		
+		<!-- cas服务 -->
+		<property name="casServerUrlPrefix" value="${cas.casServerUrlPrefix}" />
+		<!-- <property name="casServerUrlPrefix" value="http://127.0.0.1:8088/CAS_Server/" /> -->
+		<!-- 我是谁 -->
+		<property name="casService" value="${cas.casService}" />
+		<!-- <property name="casService" value="http://localhost:8088/FRDBase/shiro_cas" /> -->
+	</bean>
+
+	<!-- Shiro Filter -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<!-- <property name="loginUrl" value="http://127.0.0.1:8088/CAS_Server/login?service=http://localhost:8080/FRDBase/shiro_cas"/> -->
+		<property name="loginUrl" value="${cas.loginUrl}"/>
+		<property name="successUrl" value="/management/index" />
+        <property name="filters">
+	        <map>
+	            <entry key="casFilter" value-ref="casFilter" />
+	            <entry key="logout" value-ref="logoutFilter" />
+	             <entry key="kickout" value-ref="kickoutSessionControlFilter"/>  
+	            <!--  <entry key="myShiroAncFilter" value-ref="myShiroAncFilter"/>   -->
+	        </map>
+        </property>
+		<property name="filterChainDefinitions">
+			<value>
+			    / = anon
+				/Captcha.jpg = anon
+				/styles/** = anon
+				/js/** = anon
+				/login/timeout = anon
+				/shiro_cas = casFilter
+				/logout = logout
+				/index/** = anon
+				/register/** = anon
+				/sendAlarm/sendInfos_json = anon
+				/sendAlarm/sendInfos = anon
+                /procedureMonitor/getHistoryTrend = anon
+                /procedureMonitor/getJson_ajax = anon
+				<!-- /procedureMonitor/toMonitor = anon -->
+				/procedureMonitor/getTemplate = anon
+				/procedureMonitor/getProcedureByPointId = anon
+				/remoteAccess/** = anon
+				/urlapi/UU = anon
+				/urlapi/SU = anon
+				/urlapi/DU_D = anon
+				/urlapi/DU_E = anon
+				/company/** = anon
+				<!-- 
+                /stats/** = anon
+                /count/** = anon -->
+				/company/showPic/** = anon
+				/qualityCheck/** = anon
+				/spcdata/** = anon
+				/spcAnalyse/saveAnalyseSPCData = anon
+				/measuringTool/saveSpcMeasuring = anon
+				<!-- /url/** = anon -->
+				<!-- /** = user -->
+				 /** = kickout,user
+		 	</value>
+		</property>
+	</bean>
+	
+	<!-- <bean id="myShiroAncFilter" class="com.its.frd.filter.MyShiroAncFilter" /> -->
+	
+	<bean id="casFilter" class="com.its.frd.filter.MyCasFilter">
+		<property name="failureUrl"
+			value="${cas.failureUrl}" />
+	</bean>
+<!-- 	<bean id="casFilter" class="org.apache.shiro.cas.CasFilter">
+		<property name="failureUrl"
+			value="${cas.failureUrl}" />
+	</bean> -->
+	<!-- <bean id="logoutFilter" class="org.apache.shiro.web.filter.authc.LogoutFilter">
+		<property name="redirectUrl" value="${cas.redirectUrl}" />
+		<property name="redirectUrl" value="http://127.0.0.1:8088/CAS_Server/logout?service=http://localhost:8080/FRDBase/management/index" />
+	</bean> -->
+	<bean id="logoutFilter" class="com.its.frd.filter.MyLogoutFilter">
+		<property name="redirectUrl" value="${cas.redirectUrl}" />
+	</bean>
+
+	<!-- 用户授权信息Cache, 采用EhCache -->
+	<bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+		<property name="cacheManagerConfigFile" value="classpath:ehcache/ehcache-shiro.xml"/>
+	</bean>
+	
+	<bean id="captchaFormAuthenticationFilter" class="com.its.common.shiro.CaptchaFormAuthenticationFilter"/>
+	<bean id="dWZUserFilter" class="com.its.common.shiro.DWZUserFilter"/>
+	
+	<!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+	
+	<!-- Start -->
+	<bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">    
+	        <property name="globalSessionTimeout" value="1800000"/>    
+	        <property name="deleteInvalidSessions" value="true"/>    
+	        <property name="sessionDAO" ref="sessionDAO"/>    
+	        <property name="sessionIdCookieEnabled" value="true"/>    
+	        <property name="sessionIdCookie" ref="sessionIdCookie"/>    
+	        <property name="sessionValidationSchedulerEnabled" value="true"/>  
+	        <property name="sessionValidationScheduler" ref="sessionValidationScheduler"/>  
+	         <property name="cacheManager" ref="shiroEhcacheManager"/>  
+	</bean>    
+	       <!-- 会话DAO，sessionManager里面的session需要保存在会话Dao里，没有会话Dao，session是瞬时的，没法从  
+	     sessionManager里面拿到session -->    
+	    <bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO">    
+	        <property name="sessionIdGenerator" ref="sessionIdGenerator"/>    
+	        <property name="activeSessionsCacheName" value="shiro-activeSessionCache"/>  
+	    </bean>   
+	<bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">    
+	        <constructor-arg value="sid"/>  
+	        <property name="httpOnly" value="true"/>  
+	        <property name="maxAge" value="-1"/>   
+	</bean>   
+	 <!-- 会话ID生成器 -->  
+	 <bean id="sessionIdGenerator" class="org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator">
+	 </bean>  
+	<bean id="kickoutSessionControlFilter"  class="com.its.common.shiro.KickoutSessionControlFilter">    
+	    <property name="sessionManager" ref="sessionManager"/>    
+	    <property name="cacheManager" ref="shiroEhcacheManager"/>  
+	    <property name="kickoutAfter" value="false"/>    
+	    <property name="maxSession" value="1"/>    
+	    <property name="kickoutUrl" value="/logout?kickout=1"/>    
+	</bean>   
+	 <!-- 会话验证调度器 -->  
+    <bean id="sessionValidationScheduler" class="org.apache.shiro.session.mgt.ExecutorServiceSessionValidationScheduler ">  
+        <property name="interval" value="1800000"/>  
+        <property name="sessionManager" ref="sessionManager"/>  
+    </bean>  
+<!-- End -->
+</beans>
